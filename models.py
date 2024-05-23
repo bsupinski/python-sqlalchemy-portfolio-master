@@ -1,19 +1,15 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-import datetime
-
 
 app = Flask(__name__)
 
 
-app.config['SQLACLEHMY_DATABASE_URI'] = 'sqlite:///projects.db'
-
-
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///projects.db'
 db = SQLAlchemy(app)
 
 
-class Project(db.mdoel):
-    id = db.Column(db.Integer, primary_keyt = True)
+class Project(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
     title = db.Column("Title", db.String())
     date = db.Column("Date Created", db.DateTime)
     description = db.Column("Description", db.String())
