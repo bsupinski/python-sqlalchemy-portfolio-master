@@ -50,7 +50,7 @@ def editproject(id):
     date = project.date.strftime("%Y-%m")
     if request.form:
         project.title = request.form['title']
-        date = request.form['date']
+        project.date = datetime.strptime(request.form['date'], '%Y-%m')
         project.skills_practiced = request.form['skills']
         project.project_url = request.form['github']
         db.session.commit()
