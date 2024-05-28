@@ -3,12 +3,16 @@ from models import app, db, Project
 from datetime import datetime
 
 
+@app.context_processor
+def inject_user():
+    projects = Project.query.all()
+    return dict(projects=projects)
 
 
 @app.route("/")
 def index():
-    projects = Project.query.all()
-    return render_template('index.html', projects=projects)
+    
+    return render_template('index.html')
 
 
 @app.route("/about")
@@ -33,18 +37,33 @@ def addprojects():
 
 
 @app.route("/projects/<id>")
-def viewproject(id):
-    return render_template('detail.html')
+def detail(id):
+    project = Project.query.get_or_404(id)
+    skills = project.skills_practiced.split(", ")
+    date = datetime.strftime(project.date, "%B %y")
+    return render_template('detail.html', project=project, skills=skills, date=date)
 
 
-@app.route("/projects/<id>/edit")
+@app.route("/projects/<id>/edit", methods=["POST", "GET"])
 def editproject(id):
-    return render_template('')
+    project = Project.query.get_or_404(id)
+    date = project.date.strftime("%Y-%m")
+    if request.form:
+        project.title = request.form['title']
+        date = request.form['date']
+        project.skills_practiced = request.form['skills']
+        project.project_url = request.form['github']
+    return render_template('editprojectform.html', project=project, date=date)
 
 
 @app.route("/projects/<id>/delete")
 def deleteproject(id):
     return render_template('index.html')
+
+
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html', msg=error), 404
 
 
 

@@ -20,39 +20,9 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../static/styles.css" />
+    <link rel="stylesheet" href="/static/styles.css" />
   </head>
   {% extends 'index.html' %} {% block content %}
-  <section class="header">
-    <h1>{{project.title}}</h1>
-    <p>{{date}}</p>
-    <a href="{{project.project_url}}" class="github-btn" target="_blank">
-      <i class="fab fa-github"></i>
-      View on GitHub
-    </a>
-    <ul class="project-skills">
-      <div>
-        {% for skill in skills %}
-        <li>{{skill}}</li>
-        {% endfor %}
-      </div>
-    </ul>
-  </section>
-  <section id="project-desc">
-    <div id="triangle5"></div>
-    <h2>Description</h2>
-    <p>{{project.description}}</p>
-    <div id="triangle6"></div>
-  </section>
-  <section id="edit-delete">
-    <a href="{{url_for('editproject', id=project.id)}}">
-      <i class="fas fa-edit"></i>
-      Edit
-    </a>
-    <a href="#">
-      <i class="far fa-trash-alt"></i>
-      Delete
-    </a>
-  </section>
+  <div>404 not found</div>
   {% endblock %}
 </html>

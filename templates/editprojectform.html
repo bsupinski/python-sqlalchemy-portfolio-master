@@ -20,11 +20,11 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../static/styles.css" />
+    <link rel="stylesheet" href="/static/styles.css" />
   </head>
   {% extends 'layout.html' %}{% block content %}
   <section class="header">
-    <h1>New Project</h1>
+    <h1>Edit Project</h1>
   </section>
   <section id="form">
     <form action="" method="POST">
@@ -34,10 +34,11 @@
         name="title"
         id="title"
         placeholder="Project Name"
+        value="{{project.title}}"
         required
       />
       <label for="date">Completion Date</label>
-      <input type="month" name="date" id="date" required />
+      <input type="month" name="date" id="date" value="{{date}}" required />
       <label for="description">Description</label>
       <textarea
         name="desc"
@@ -46,7 +47,9 @@
         rows="20"
         placeholder="Description"
         required
-      ></textarea>
+      >
+        {{project.description}}
+      </textarea>
       <label for="skills-list" id="skills-label">Skills</label>
       <p>Separate each skill by a comma</p>
       <textarea
@@ -56,13 +59,16 @@
         rows="10"
         placeholder="Skill, Skill"
         required
-      ></textarea>
+      >
+        {{project.skills_practiced}}
+      </textarea>
       <label for="github">GitHub Link</label>
       <input
         type="url"
         name="github"
         id="github"
         placeholder="Link to the repo"
+        value="{{project.project_url}}"
         required
       />
       <div>

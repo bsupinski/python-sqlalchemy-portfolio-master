@@ -42,10 +42,16 @@
                 Projects
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% for project in projects %}
                 <li>
-                  <a class="dropdown-item" href="#project1">Project 1</a>
+                  <a
+                    class="dropdown-item"
+                    href="{{url_for('detail', id=project.id)}}"
+                    >Project {{project.id}}</a
+                  >
                 </li>
-                <li>
+                {% endfor %}
+                <!-- <li>
                   <a class="dropdown-item" href="#project2">Project 2</a>
                 </li>
                 <li>
@@ -53,7 +59,7 @@
                 </li>
                 <li>
                   <a class="dropdown-item" href="#project4">Project 4</a>
-                </li>
+                </li> -->
               </ul>
             </li>
             <li class="nav-item">
