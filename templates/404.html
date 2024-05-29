@@ -22,7 +22,35 @@
     />
     <link rel="stylesheet" href="/static/styles.css" />
   </head>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 70vh;
+      width: 100vw;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .error-code {
+      margin: 0;
+      font-size: clamp(6rem, 1.9091rem + 17.4545vw, 15rem);
+    }
+    .error-message {
+      margin: 0;
+      font-size: clamp(2rem, 0.6364rem + 5.8182vw, 5rem);
+    }
+  </style>
   {% extends 'index.html' %} {% block content %}
-  <div style="height: 100vh">404 not found</div>
+  <div class="container">
+    <div class="wrapper">
+      <div class="error-code">404</div>
+      <div class="error-message">Page Not Found</div>
+    </div>
+  </div>
   {% endblock %}
 </html>
