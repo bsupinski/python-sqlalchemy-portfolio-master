@@ -1,51 +1,38 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Portfolio</title>
-    <meta name="description" content="A portfolio of my work" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/static/styles.css" />
-  </head>
-  <body>
-    {% extends 'layout.html' %}
-    {% block content %}
-    <section class="header">
-      <h1>Brandon S.</h1>
-      <p>Aspiring Python Devloper</p>
-      <!--I would suggest choosing a different picture here.-->
-      <!--Like maybe a hobby photo-->
-      <img
-        src="../static/img/broll.jpg"
-        alt="Headshot of myself"
-      />
-    </section>
-    <section id="about-page">
-      <div id="triangle7"></div>
-      <div id="triangle8"></div>
-      <h2>Who I Am</h2>
-      <p>
-        Rasied and currently living in the Oean State, Rhode Island. Been here all my life and yet somehow still dislike the ocean.
-        Graduated with an associate's degree in Graphic Design, after finding out it was something I did not really enjoy, searched for another career to begion a journey with. 
-      </p>
-      <h2>Why Coding</h2>
-      <p>
-        Part of my degree program went over HTML and CSS, it didn't click with me at that point. I came across the TreeHouse Front End Tech degree and really started to enjoy it. I took other courses in JavaScript and really enjoyed that part of it the most. After practicing on my own I was a bit worried where as a Front End I may have to deal with layout and art mroe than I'd like.
-        I really wanted to get my hand on more coding knowledge so started the Pyth Tech Degree and it quickly became my favorite. The need to solve problems with a limited resource has been enjoyable to me. There can be many ways to solve a problem, or just one. When you finally figure it out it is very rewarding.
-      </p>
-      <a href="#"><i class="far fa-file"></i>Resume</a>
-      <p style="text-align: center">Resume coming soon...</p>
-    </section>
-    {% endblock %}
-</html>
+<body>
+  {% extends 'layout.html' %} {% block content %}
+  <section class="header">
+    <h1>Brandon S.</h1>
+    <p>Aspiring Python Devloper</p>
+    <!--I would suggest choosing a different picture here.-->
+    <!--Like maybe a hobby photo-->
+    <img src="../static/img/broll.jpg" alt="Headshot of myself" />
+  </section>
+  <section id="about-page">
+    <div id="triangle7"></div>
+    <div id="triangle8"></div>
+    <h2>Who I Am</h2>
+    <p>
+      Rasied and currently living in the Oean State, Rhode Island. Been here all
+      my life and yet somehow still dislike the ocean. Graduated with an
+      associate's degree in Graphic Design, after finding out it was something I
+      did not really enjoy, searched for another career to begion a journey
+      with.
+    </p>
+    <h2>Why Coding</h2>
+    <p>
+      Part of my degree program went over HTML and CSS, it didn't click with me
+      at that point. I came across the TreeHouse Front End Tech degree and
+      really started to enjoy it. I took other courses in JavaScript and really
+      enjoyed that part of it the most. After practicing on my own I was a bit
+      worried where as a Front End I may have to deal with layout and art mroe
+      than I'd like. I really wanted to get my hand on more coding knowledge so
+      started the Pyth Tech Degree and it quickly became my favorite. The need
+      to solve problems with a limited resource has been enjoyable to me. There
+      can be many ways to solve a problem, or just one. When you finally figure
+      it out it is very rewarding.
+    </p>
+    <a href="#"><i class="far fa-file"></i>Resume</a>
+    <p style="text-align: center">Resume coming soon...</p>
+  </section>
+  {% endblock %}
+</body>
