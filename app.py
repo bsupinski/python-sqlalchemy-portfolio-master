@@ -11,7 +11,6 @@ def inject_user():
 
 @app.route("/")
 def index():
-    
     return render_template('index.html')
 
 
@@ -40,7 +39,7 @@ def addprojects():
 def detail(id):
     project = Project.query.get_or_404(id)
     skills = project.skills_practiced.split(", ")
-    date = datetime.strftime(project.date, "%B %y")
+    date = datetime.strftime(project.date, "%B %Y")
     return render_template('detail.html', project=project, skills=skills, date=date)
 
 
