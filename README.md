@@ -15,6 +15,7 @@ Activate the venv on
 PC: venv\Scripts\activate
 On Mac: venv/bin/activate
 Once in the venv install the dependencies: pip install -r requirements.
+Run the program with: python app.py
 
 What was learned?
 From this project an understanding of CSS and HTML was taught. It focused on Flask and SQLAlcemy, with how to create a DataBase with SQLAlchemy and flask to manipulate web pages and backend with flask.
